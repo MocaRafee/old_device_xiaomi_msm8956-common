@@ -29,18 +29,18 @@ import org.lineageos.internal.util.FileUtils;
 
 public class KeyDisabler {
 
-    private static String CONTROL_PATH = "/proc/touchpanel/capacitive_keys_disable";
+    private static String CONTROL_PATH = "/proc/touchpanel/capacitive_keys_enable";
 
     public static boolean isSupported() {
         return FileUtils.isFileWritable(CONTROL_PATH);
     }
 
     public static boolean isActive() {
-        return FileUtils.readOneLine(CONTROL_PATH).equals("1");
+        return FileUtils.readOneLine(CONTROL_PATH).equals("0");
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, state ? "1" : "0");
+        return FileUtils.writeLine(CONTROL_PATH, state ? "0" : "1");
     }
 
 }
