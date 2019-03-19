@@ -48,6 +48,7 @@ public class Startup extends BroadcastReceiver {
                 context.startService(in);
               }
            }, 0);
-        } 
+        }
+        DeviceSettings.restoreSpectrumProp(context); 
     }
 }

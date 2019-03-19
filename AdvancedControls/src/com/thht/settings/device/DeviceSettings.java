@@ -19,9 +19,13 @@ package com.thht.settings.device;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -64,7 +68,10 @@ public class DeviceSettings extends PreferenceActivity implements
     public static final String KEY_SCREEN_COLOR = "key_screen_color";
     public static final String KEY_KCAL_EXTRAS = "key_kcal_extras";
 
+    private static final String SPECTRUM_KEY = "spectrum";
+    private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
+    private ListPreference mSpectrum;
     private VibratorStrengthPreference mVibratorStrength;
     private YellowTorchBrightnessPreference mYellowTorchBrightness;
     private WhiteTorchBrightnessPreference mWhiteTorchBrightness;
@@ -119,6 +126,14 @@ public class DeviceSettings extends PreferenceActivity implements
         kcalPresetsPreference.setOnPreferenceChangeListener(this);
 
         kcalPresetsListPreference.setOnPreferenceChangeListener(this);
+
+
+        mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
+        if( mSpectrum != null ) {
+            mSpectrum.setValue(SystemProperties.get(SPECTRUM_SYSTEM_PROPERTY, "0"));
+            mSpectrum.setOnPreferenceChangeListener(this);
+            mSpectrum.setSummary(mSpectrum.getEntry());
+        }
     }
 
     @Override
@@ -162,7 +177,19 @@ public class DeviceSettings extends PreferenceActivity implements
             editor.commit();
         }
 
+        else if (preference == mSpectrum) {
+            String strvalue = (String) newValue;
+            int index = mSpectrum.findIndexOfValue(strvalue);
+            mSpectrum.setSummary(mSpectrum.getEntries()[index]);
+            SystemProperties.set(SPECTRUM_SYSTEM_PROPERTY, strvalue);
+        }
+
         return true;
+    }
+
+    public static void restoreSpectrumProp(Context context) {
+        String spectrumStoredValue = PreferenceManager.getDefaultSharedPreferences(context).getString(SPECTRUM_KEY, "0");
+        SystemProperties.set(SPECTRUM_SYSTEM_PROPERTY, spectrumStoredValue);
     }
 
     private void setKcalPresetsDependents(boolean value) {
