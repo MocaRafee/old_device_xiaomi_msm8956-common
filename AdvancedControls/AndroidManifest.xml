@@ -13,6 +13,7 @@
     <application
         android:label="@string/advanced_settings"
         android:theme="@android:style/Theme.DeviceDefault.Settings"
+        android:icon="@drawable/launcher"
         android:supportsRtl="true" >
         <activity
             android:name="com.thht.settings.device.DeviceSettings"
@@ -20,7 +21,7 @@
             android:label="@string/advanced_settings" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <!--category android:name="android.intent.category.LAUNCHER" /-->
+                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
