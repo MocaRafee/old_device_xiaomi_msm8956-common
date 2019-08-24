@@ -12,8 +12,8 @@
         android:targetSdkVersion="28" />
     <application
         android:label="@string/advanced_settings"
-        android:icon="@drawable/launcher"
         android:theme="@android:style/Theme.DeviceDefault.Settings"
+        android:icon="@drawable/launcher"
         android:supportsRtl="true" >
         <activity
             android:name="com.thht.settings.device.DeviceSettings"
