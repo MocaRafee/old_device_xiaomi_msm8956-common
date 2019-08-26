@@ -177,7 +177,7 @@ ro.lmk.use_minfree_levels=true
 ro.lmk.debug=true
 
 # Maintener string
-ro.havoc.maintener=Moca
+ro.havoc.maintainer=Moca
 
 # Buildtype string
 ro.havoc.releasetype=WeebsEdition
