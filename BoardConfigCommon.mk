@@ -144,9 +144,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_LEGACY_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
-# Extended filesystem support
-TARGET_EXFAT_DRIVER := sdfat
-
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
 
@@ -196,6 +193,7 @@ TARGET_PER_MGR_ENABLED := true
 
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
+TARGET_USES_INTERACTION_BOOST := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
