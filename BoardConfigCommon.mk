@@ -104,7 +104,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 BOARD_USES_SNAPDRAGONCAMERA_VERSION := 2
 TARGET_TS_MAKEUP := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-        /system/bin/mm-qcamera-daemon=23
+        /system/bin/mm-qcamera-daemon=28
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
