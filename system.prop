@@ -106,14 +106,21 @@ persist.ims.disableIMSLogs=1
 persist.ims.disableQXDMLogs=1
 
 # Media
-media.msm8956hw=1
+media.msm8956hw=0
 mm.enable.sec.smoothstreaming=true
+debug.media.codec2=2
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 persist.media.treble_omx=false
 media.stagefright.thumbnail.prefer_hw_codecs=true
-debug.stagefright.omx_default_rank.sw-audio=1
-debug.stagefright.omx_default_rank=0
+media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
+media.aac_51_output_enabled=true
+media.stagefright.audio.sink=280
+mm.enable.qcom_parser=17825791
+
+
 
 # NITZ
 persist.rild.nitz_plmn=
