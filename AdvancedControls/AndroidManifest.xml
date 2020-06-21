@@ -13,7 +13,6 @@
     <application
         android:label="@string/advanced_settings"
         android:theme="@android:style/Theme.DeviceDefault.Settings"
-        android:icon="@drawable/launcher"
         android:supportsRtl="true" >
         <activity
             android:name="com.thht.settings.device.DeviceSettings"
@@ -21,8 +20,24 @@
             android:label="@string/advanced_settings" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+<!--                 <category android:name="android.intent.category.LAUNCHER" /> -->
                 <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            <meta-data
+                android:name="com.android.settings.dismiss"
+                android:value="9,13,30" />
+            <meta-data
+                android:name="com.android.settings.bg.hint"
+                android:resource="@color/homepage_parts_background" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_mi" />
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/advanced_settings_summary" />
             </intent-filter>
         </activity>
         <receiver android:name="com.thht.settings.device.Startup"
@@ -35,7 +50,7 @@
         </receiver>
         <service
             android:name="com.thht.settings.device.RestoreService"
-						android:directBootAware="true"
+			android:directBootAware="true"
             android:enabled="true"
             android:exported="true">
 				</service>
