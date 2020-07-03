@@ -32,4 +32,3 @@ allow untrusted_app rootfs:file getattr;
 allow untrusted_app system_app_data_file:dir search;
 allow untrusted_app anr_data_file:dir { getattr read };
 allow untrusted_app selinuxfs:file read;
-allow untrusted_app zygote_tmpfs:file execmod;
