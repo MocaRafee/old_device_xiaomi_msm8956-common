@@ -28,4 +28,4 @@ allow init system_file:dir relabelfrom;
 allow init system_file:file relabelfrom;
 
 # Charger
-allow init rootfs:file mounton
+allow init rootfs:file mounton;
