@@ -20,7 +20,6 @@ allow untrusted_app debugfs:dir read;
 allow untrusted_app device:chr_file getattr;
 allow untrusted_app device:dir read;
 allow untrusted_app device:file getattr;
-allow untrusted_app dpmd_data_file:dir search;
 allow untrusted_app mmi_data_file:dir read;
 allow untrusted_app proc:file read;
 allow untrusted_app radio_data_file:dir getattr;
