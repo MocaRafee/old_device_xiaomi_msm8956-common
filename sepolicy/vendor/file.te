@@ -24,6 +24,9 @@ type proc_kernel_printk, fs_type, proc_type;
 # Sched boost
 type proc_kernel_sched_boost, fs_type, proc_type;
 
+#file type for restricting init.qcom.power.rc
+type proc_kernel_sched, fs_type;
+
 # Wcnss sysfs files
 type sysfs_wcnss, fs_type, sysfs_type;
 
