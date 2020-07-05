@@ -27,6 +27,10 @@
 /sys/devices/platform/kcal_ctrl.0(/.*)?         u:object_r:kcal_dev:s0
 /sys/bus/platform/drivers/kcal_ctrl(/.*)?       u:object_r:kcal_dev:s0
 
+# Advanced Controls
+/sys/devices/soc.0/qpnp-flash-led-23/leds/led:torch_0(/.*)?	u:object_r:sysfs_torch:s0
+/sys/devices/soc.0/qpnp-flash-led-23/leds/led:torch_1(/.*)?	u:object_r:sysfs_torch:s0
+
 # DT2W
 /sys/android_touch/doubletap2wake                                     u:object_r:sysfs_dt2w:s0
 
