@@ -484,7 +484,6 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
-    <!-- WFD HAL Service -->
     <hal format="hidl">
         <name>com.qualcomm.qti.wifidisplayhal</name>
         <transport>hwbinder</transport>
