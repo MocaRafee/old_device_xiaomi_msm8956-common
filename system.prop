@@ -189,3 +189,6 @@ ro.max.fling_velocity=40000
 
 # Zygote preforking
 persist.device_config.runtime_native.usap_pool_enabled=true
+
+# Dalvik
+ro.dalvik.vm.native.bridge=0

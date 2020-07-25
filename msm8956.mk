@@ -389,9 +389,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
-    init.safailnet.rc \
-    init.spectrum.rc \
-    init.spectrum.sh
+    init.safailnet.rc
+#    init.spectrum.rc \
+#   init.spectrum.sh
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \

@@ -275,5 +275,14 @@ setprop persist.vendor.mmi.misc_dev_path $real_path
 # Set BFQ as default io-schedular after boot
 setprop sys.io.scheduler "cfq"
 
+# Set TCP congestion to Westwood after boot 
+echo westwood > /proc/sys/net/ipv4/tcp_congestion_control
+
+# Adreno Idler
+echo Y > /sys/module/adreno_idler/parameters/adreno_idler_active
+
+# Adreno Boost
+echo 1 > /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+
 # Set Sound Control parameters after boot
 echo 6 > /sys/kernel/sound_control/speaker_gain
