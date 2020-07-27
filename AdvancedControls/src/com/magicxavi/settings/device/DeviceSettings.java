@@ -59,16 +59,16 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
-//    // Spectrum
-//    public static final String PREF_SPECTRUM = "spectrum";
-//    public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
+    // Spectrum
+    public static final String PREF_SPECTRUM = "spectrum";
+    public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     // QC limit
     //private static final String CATEGORY_QC= "qc";
     //public static final String PREF_QC_LIMIT = "qc_limit";
     //public static final String QC_LIMIT_PATH = "/sys/devices/soc.0/qpnp-smbcharger-16/power_supply/battery/constant_charge_current_max";
 
-//    private SecureSettingListPreference mSPECTRUM;
+    private SecureSettingListPreference mSPECTRUM;
     private SecureSettingCustomSeekBarPreference mHeadphoneGain;
     private SecureSettingCustomSeekBarPreference mMicrophoneGain;
 
@@ -112,10 +112,10 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
-//        mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
-//        mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
-//        mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-//        mSPECTRUM.setOnPreferenceChangeListener(this);
+        mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
+        mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
+        mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+        mSPECTRUM.setOnPreferenceChangeListener(this);
 
         boolean enhancerEnabled;
         try {
@@ -211,11 +211,11 @@ public class DeviceSettings extends PreferenceFragment implements
                 }
                 break;
 
-//            case PREF_SPECTRUM:
-//                mSPECTRUM.setValue((String) value);
-//                mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-//                FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
-//                break;
+            case PREF_SPECTRUM:
+                mSPECTRUM.setValue((String) value);
+                mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+                FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
+                break;
 
             case PREF_FPWAKEUP:
                 FileUtils.setValue(FPWAKEUP_PATH, (boolean) value);
