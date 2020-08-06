@@ -499,8 +499,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # AdvancedControls
-PRODUCT_PACKAGES += \
-    AdvancedControls
+#PRODUCT_PACKAGES += \
+#    AdvancedControls
 
 # Cast hacks
 PRODUCT_PROPERTY_OVERRIDES += \
