@@ -16,8 +16,9 @@
 #
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-bliss
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/msm8956-common/msm8956-common-vendor.mk)
@@ -88,9 +89,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
-#CustomDoze
-PRODUCT_PACKAGES +=  \
-     CustomDoze
+# Doze mode
+PRODUCT_PACKAGES += \
+    CustomDoze \
+    XiaomiParts
 
 # Audio
 PRODUCT_PACKAGES += \
