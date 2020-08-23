@@ -20,4 +20,7 @@
     <!-- Whether notify user that switch data service -->
     <bool name="confirm_to_switch_data_service">true</bool>
 
+    <!--Custom Doze-->
+    <string name="config_customDozePackage">com.custom.ambient.display/com.custom.ambient.display.DozeSettings</string>
+
 </resources>
